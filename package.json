@@ -1,0 +1,29 @@
+{
+  "name": "fb2wp",
+  "version": "0.2.0",
+  "description": "A NodeJS bot for republish Wordpress blog post from Facebook page.",
+  "homepage": "https://github.com/nczz/FB2WP",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:nczz/FB2WP.git"
+  },
+  "main": "bot.js",
+  "scripts": {
+    "test": "node bot.js"
+  },
+  "keywords": [
+    "Facebook",
+    "bot",
+    "WordPress",
+    "posts"
+  ],
+  "author": "Mxp.TW",
+  "license": "MIT",
+  "dependencies": {
+    "request": "^2.65.0",
+    "twitter-text": "^1.13.2",
+    "wordpress": "^1.1.1"
+  },
+  "readme": "# FB2WP \n\n> - A NodeJS bot for republish Wordpress blog post from Facebook page.\n\n## Requires \n\n1. WordPress 3.4 or newer\n2. Facebook page and Facebook App\n3. NodeJS(tested on 0.12.x) or IOJS\n\n## Installation\n\nDownload the source code with git or zip file.\n\n```\nnpm install \n```\n\n## Usage\n\n```\nnode bot.js\n```\n\n## License\n\nCopyright \n.TW. Released under the terms of the MIT license.\n",
+  "readmeFilename": "README.md"
+}
