@@ -1,7 +1,7 @@
 module.exports = {
 	wordpress_url: 'http://127.0.0.1/wp/',
-    wordpress_username: 'USERNAME',
-    wordpress_password: 'PASSWD',
+	wordpress_username: 'USERNAME',
+	wordpress_password: 'PASSWD',
 	wordpress_post_title: (new Date().getFullYear()) + ' 年 第 ' + (new Date().getWeek()) + ' 週 Facebook 同步週報 (MXPPOSTCOUNT 篇)',
 	wordpress_post_status: 'publish', //publish, draft, pending, private ref: http://codex.wordpress.org/XML-RPC_WordPress_API/Posts#wp.getPostStatusList
 	wordpress_post_author: 1, //admin? that's it.
