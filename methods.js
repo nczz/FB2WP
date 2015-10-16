@@ -23,7 +23,7 @@ Date.prototype.getWeek = function(dowOffset) {
             nday = nYear.getDay() - dowOffset;
             nday = nday >= 0 ? nday : nday + 7;
             /*if the next year starts before the middle of
- 			  the week, it is week #1 of that year*/
+              the week, it is week #1 of that year*/
             weeknum = nday < 4 ? 1 : 53;
         }
     } else {
@@ -35,18 +35,18 @@ Date.prototype.getWeek = function(dowOffset) {
 var fs = require('fs');
 
 module.exports = {
-	debug: function(){ 
-		if(process.env.FB2WP_DEBUG){
-			console.log([].slice.call(arguments).join(' '));
-		}
-	},
-	see_u_next_time: function(time){
-		var self = this;
-		fs.writeFile('./time.log', time, function(err) {
-				if(err) {
-					return self.debug('FB2WP: file system error.');
-				}
-				self.debug('FB2WP: Time log file was save!');
-		});
-	}
+    debug: function(){ 
+        if(process.env.FB2WP_DEBUG){
+            console.log([].slice.call(arguments).join(' '));
+        }
+    },
+    see_u_next_time: function(time){
+        var self = this;
+        fs.writeFile('./time.log', time, function(err) {
+                if(err) {
+                    return self.debug('FB2WP: file system error.');
+                }
+                self.debug('FB2WP: Time log file was save!');
+        });
+    }
 }

@@ -10,7 +10,7 @@
   "main": "bot.js",
   "scripts": {
     "test": "set FB2WP_DEBUG=true && node bot.js",
-	"start": "node bot.js"
+    "start": "node bot.js"
   },
   "keywords": [
     "Facebook",
