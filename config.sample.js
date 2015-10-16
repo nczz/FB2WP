@@ -16,7 +16,7 @@ var config = {
     facebook_page_name: 'a.tech.guy',//'cyberbuzz', //ID or Name
     facebook_app_access_token: 'FACEBOOKAPPACCESSTOKEN', //ref: https://developers.facebook.com/docs/facebook-login/access-tokens#extending
     facebook_posts_fields: 'link,message,picture,description,created_time', //ref: https://developers.facebook.com/docs/graph-api/reference/v2.5/post
-    system_post_period_day: 2, //default 1 week
+    system_post_period_day: 7, //default 1 week
     system_time_to_go: false,
     system_now: Math.floor(new Date() / 1000)
 };
