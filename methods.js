@@ -37,7 +37,7 @@ var fs = require('fs');
 module.exports = {
     debug: function(){ 
         if(process.env.FB2WP_DEBUG){
-            console.log([].slice.call(arguments).join(' '));
+            console.log(JSON.stringify([].slice.call(arguments)));
         }
     },
     see_u_next_time: function(time){
