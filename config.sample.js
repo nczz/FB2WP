@@ -1,4 +1,6 @@
-module.exports = {
+var fs = require('fs');
+
+var config = {
 	wordpress_url: 'http://127.0.0.1/wp/',
 	wordpress_username: 'USERNAME',
 	wordpress_password: 'PASSWD',
@@ -11,9 +13,44 @@ module.exports = {
 	wordpress_post_category: ['Facebook同步備份'],//go wp-admin/edit-tags.php?taxonomy=category and look the name.
 	wordpress_post_tags: ['Facebook'], //the default tag
 	facebook_graph_api: 'https://graph.facebook.com/v2.5/',
-	facebook_page_name: 'a.tech.guy', //ID or Name
-	facebook_app_access_token: 'FB-APP-ACCESS-TOKEN-HERE', //ref: https://developers.facebook.com/docs/facebook-login/access-tokens#extending
+	facebook_page_name: 'a.tech.guy',//'cyberbuzz', //ID or Name
+	facebook_app_access_token: 'FACEBOOKAPPACCESSTOKEN', //ref: https://developers.facebook.com/docs/facebook-login/access-tokens#extending
 	facebook_posts_fields: 'link,message,picture,description,created_time', //ref: https://developers.facebook.com/docs/graph-api/reference/v2.5/post
-	system_post_period_day: 7, //default 1 week
-	system_debug_mode: true 
+	system_post_period_day: 2, //default 1 week
+	system_time_to_go: false,
+	system_now: Math.floor(new Date() / 1000)
 };
+
+var last_time = null;
+var time_diff = config.system_post_period_day*86400;
+
+module.exports = function(cb){
+	fs.readFile('./time.log', 'utf8', function (err,data) {
+		if (err) {
+			fs.writeFile('./time.log', config.system_now, function(err) {
+				if(err) {
+					return GLOBAL.methods.debug('FB2WP: file system error.');
+				}
+				GLOBAL.methods.debug('FB2WP: Time log file was created!');
+				//the first round
+				config.system_time_to_go = true;
+				config.system_since = config.system_now-time_diff;
+				cb(config);
+			}); 
+		} else {
+			last_time = parseInt(data, 10);
+			if (isNaN(last_time)){
+				return GLOBAL.methods.debug('FB2WP: syntax error, time.log should be in timestamp format.');
+			}
+			if (config.system_now-last_time>time_diff){
+				GLOBAL.methods.debug('FB2WP: Need to update.');
+				config.system_time_to_go = true;
+				config.system_since = last_time;
+			} else {
+				GLOBAL.methods.debug('FB2WP: Not yet');
+				config.system_time_to_go = false;
+			}
+			cb(config);
+		}
+	});
+}

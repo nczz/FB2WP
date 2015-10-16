@@ -32,7 +32,21 @@ Date.prototype.getWeek = function(dowOffset) {
     return weeknum;
 };
 
+var fs = require('fs');
+
 module.exports = {
-	debug: function(){ if(GLOBAL.config.system_debug_mode)console.log(arguments);},
-	
-};
+	debug: function(){ 
+		if(process.env.FB2WP_DEBUG){
+			console.log([].slice.call(arguments).join(' '));
+		}
+	},
+	see_u_next_time: function(time){
+		var self = this;
+		fs.writeFile('./time.log', time, function(err) {
+				if(err) {
+					return self.debug('FB2WP: file system error.');
+				}
+				self.debug('FB2WP: Time log file was save!');
+		});
+	}
+}

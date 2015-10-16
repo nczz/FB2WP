@@ -1,6 +1,6 @@
 {
   "name": "fb2wp",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "A NodeJS bot for republish Wordpress blog post from Facebook page.",
   "homepage": "https://github.com/nczz/FB2WP",
   "repository": {
@@ -9,7 +9,8 @@
   },
   "main": "bot.js",
   "scripts": {
-    "test": "node bot.js"
+    "test": "set FB2WP_DEBUG=true && node bot.js",
+	"start": "node bot.js"
   },
   "keywords": [
     "Facebook",
