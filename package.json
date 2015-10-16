@@ -9,7 +9,8 @@
   },
   "main": "bot.js",
   "scripts": {
-    "test": "set FB2WP_DEBUG=true && node bot.js",
+    "windows-test": "set FB2WP_DEBUG=true && node bot.js",
+    "linux-test": "export FB2WP_DEBUG=true &&  node bot.js"
     "start": "node bot.js"
   },
   "keywords": [
