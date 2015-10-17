@@ -26,6 +26,6 @@
     "twitter-text": "^1.13.2",
     "wordpress": "^1.1.1"
   },
-  "readme": "# FB2WP \n\n> - A NodeJS bot for republish Wordpress blog post from Facebook page.\n\n## Requires \n\n1. WordPress 3.4 or newer\n2. Facebook page and Facebook App\n3. NodeJS(tested on 0.12.x) or IOJS\n\n## Installation\n\nDownload the source code with git or zip file.\n\n```\nnpm install \n```\n\n## Usage\n\n```\nnode bot.js\n```\n\n## License\n\nCopyright \n.TW. Released under the terms of the MIT license.\n",
+  "readme": "# FB2WP \n\n> - A NodeJS bot for republish Wordpress blog post from Facebook page.\n\n## Requires \n\n1. WordPress 3.4 or newer\n2. Facebook page and Facebook App\n3. NodeJS(tested on 0.12.x) or IOJS\n\n## Installation\n\nDownload the source code from git or zip file.\n\n```\nnpm install \n```\n\n## Usage\n\nOpen `config.sample.js` file and setting the bot configuration.\n\nThen save and rename `config.sample.js` to `config.js`\n\n```\nnode bot.js\n```\n\n## License\n\nCopyright Mxp.TW. Released under the terms of the MIT license.\n",
   "readmeFilename": "README.md"
 }
