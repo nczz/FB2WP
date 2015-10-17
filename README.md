@@ -10,7 +10,7 @@
 
 ## Installation
 
-Download the source code with git or zip file.
+Download the source code from git or zip file.
 
 ```
 npm install 
@@ -20,7 +20,7 @@ npm install
 
 Open `config.sample.js` file and setting the bot configuration.
 
-Then save and change the file name `config.sample.js` to `config.js`
+Then save and rename `config.sample.js` to `config.js`
 
 ```
 node bot.js
